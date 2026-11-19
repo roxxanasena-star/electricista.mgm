@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Electricista MGM en San Miguel, Corrientes. Servicio eléctrico domiciliario, media y baja tensión, trifásica y urgencias a domicilio con trabajo garantizado.">
+  <title>Electricista MGM | San Miguel, Corrientes</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* Variables de color llamativas y de alto contraste */
+    :root {
+      --bg-oscuro: #0b1320;
+      --bg-seccion: #111c2e;
+      --acento: #ff9f1c;       /* Ámbar / eléctrico llamativo */
+      --acento-hover: #f08c00;
+      --texto-claro: #f8fafc;
+      --texto-suave: #cbd5e1;
+      --tarjeta-bg: #18273e;
+      --borde-suave: rgba(255, 255, 255, 0.1);
+      --whatsapp: #25d366;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: var(--bg-oscuro);
+      color: var(--texto-claro);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, .logo {
+      font-family: 'Montserrat', sans-serif;
+      line-height: 1.2;
+    }
+
+    .contenedor {
+      width: 100%;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 1.25rem;
+    }
+
+    /* Botones reutilizables */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      text-decoration: none;
+      font-weight: 700;
+      border-radius: 10px;
+      padding: 0.9rem 1.5rem;
+      transition: transform 0.2s ease, background-color 0.2s ease, opacity 0.2s ease;
+      cursor: pointer;
+    }
+
+    .btn-primario {
+      background-color: var(--acento);
+      color: #0b1320;
+    }
+
+    .btn-primario:hover {
+      background-color: var(--acento-hover);
+      transform: translateY(-2px);
+    }
+
+    .btn-whatsapp {
+      background-color: var(--whatsapp);
+      color: #062813;
+    }
+
+    .btn-whatsapp:hover {
+      opacity: 0.92;
+      transform: translateY(-2px);
+    }
+
+    /* 1. Encabezado */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background-color: rgba(11, 19, 32, 0.94);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--borde-suave);
+    }
+
+    .header-contenido {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.9rem 0;
+      gap: 1rem;
+    }
+
+    .logo {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--texto-claro);
+      text-decoration: none;
+      letter-spacing: 0.5px;
+    }
+
+    .logo span {
+      color: var(--acento);
+    }
+
+    /* 2. Hero (Mobile First) */
+    .hero {
+      padding: 3.5rem 0 3rem;
+      background: radial-gradient(circle at top right, rgba(255, 159, 28, 0.18), transparent 55%),
+                  var(--bg-oscuro);
+    }
+
+    .hero-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .badge {
+      display: inline-block;
+      background-color: rgba(255, 159, 28, 0.15);
+      color: var(--acento);
+      border: 1px solid rgba(255, 159, 28, 0.4);
+      font-size: 0.85rem;
+      font-weight: 700;
+      padding: 0.35rem 0.8rem;
+      border-radius: 999px;
+      margin-bottom: 1rem;
+    }
+
+    .hero h1 {
+      font-size: 2.1rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+    }
+
+    .hero h1 span {
+      color: var(--acento);
+    }
+
+    .hero p {
+      color: var(--texto-suave);
+      font-size: 1.05rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-acciones {
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+    }
+
+    .tarjeta-destacada {
+      background-color: var(--tarjeta-bg);
+      border: 1px solid var(--borde-suave);
+      border-left: 4px solid var(--acento);
+      border-radius: 14px;
+      padding: 1.5rem;
+    }
+
+    .tarjeta-destacada h2 {
+      font-size: 1.2rem;
+      color: var(--acento);
+      margin-bottom: 0.75rem;
+    }
+
+    .lista-servicios {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+      color: var(--texto-claro);
+      font-size: 0.98rem;
+    }
+
+    .lista-servicios li::before {
+      content: "⚡ ";
+      color: var(--acento);
+    }
+
+    /* Secciones generales */
+    section {
+      padding: 3.5rem 0;
+    }
+
+    .seccion-alterna {
+      background-color: var(--bg-seccion);
+      border-top: 1px solid var(--borde-suave);
+      border-bottom: 1px solid var(--borde-suave);
+    }
+
+    .titulo-seccion {
+      text-align: center;
+      margin-bottom: 2.25rem;
+    }
+
+    .titulo-seccion h2 {
+      font-size: 1.75rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .titulo-seccion p {
+      color: var(--texto-suave);
+    }
+
+    /* 3. Beneficios */
+    .grid-3 {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.25rem;
+    }
+
+    .card {
+      background-color: var(--tarjeta-bg);
+      border: 1px solid var(--borde-suave);
+      border-radius: 14px;
+      padding: 1.5rem;
+    }
+
+    .icono-box {
+      width: 46px;
+      height: 46px;
+      border-radius: 10px;
+      background-color: rgba(255, 159, 28, 0.15);
+      color: var(--acento);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.35rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+    }
+
+    .card h3 {
+      font-size: 1.15rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .card p {
+      color: var(--texto-suave);
+      font-size: 0.95rem;
+    }
+
+    /* 4. Cómo funciona en 3 pasos */
+    .paso-numero {
+      display: inline-block;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 800;
+      font-size: 0.9rem;
+      color: #0b1320;
+      background-color: var(--acento);
+      padding: 0.25rem 0.7rem;
+      border-radius: 999px;
+      margin-bottom: 0.85rem;
+    }
+
+    /* 5. Cierre con llamado a la acción */
+    .cierre-box {
+      background: linear-gradient(135deg, rgba(255, 159, 28, 0.18), rgba(24, 39, 62, 0.95));
+      border: 1px solid rgba(255, 159, 28, 0.35);
+      border-radius: 18px;
+      padding: 2.25rem 1.5rem;
+      text-align: center;
+    }
+
+    .cierre-box h2 {
+      font-size: 1.7rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .cierre-box p {
+      color: var(--texto-suave);
+      max-width: 620px;
+      margin: 0 auto 1.5rem;
+    }
+
+    /* 6. Pie de página */
+    footer {
+      background-color: #070d16;
+      padding: 2.5rem 0 5.5rem;
+      border-top: 1px solid var(--borde-suave);
+      font-size: 0.95rem;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      margin-bottom: 1.75rem;
+    }
+
+    footer h3 {
+      font-size: 1rem;
+      color: var(--acento);
+      margin-bottom: 0.5rem;
+    }
+
+    footer p {
+      color: var(--texto-suave);
+    }
+
+    .footer-base {
+      text-align: center;
+      color: #94a3b8;
+      font-size: 0.85rem;
+      padding-top: 1.25rem;
+      border-top: 1px solid var(--borde-suave);
+    }
+
+    /* Botón flotante de WhatsApp */
+    .whatsapp-flotante {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 200;
+      background-color: var(--whatsapp);
+      color: #062813;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.95rem;
+      padding: 0.85rem 1.25rem;
+      border-radius: 50px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+      animation: pulso 2s infinite;
+    }
+
+    @keyframes pulso {
+      0%, 100% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.06);
+      }
+    }
+
+    /* Escritorio / pantallas medianas y grandes */
+    @media (min-width: 768px) {
+      .hero {
+        padding: 4.5rem 0;
+      }
+
+      .hero-grid {
+        display: grid;
+        grid-template-columns: 1.25fr 0.85fr;
+        align-items: center;
+        gap: 2.5rem;
+      }
+
+      .hero h1 {
+        font-size: 2.75rem;
+      }
+
+      .hero-acciones {
+        flex-direction: row;
+        flex-wrap: wrap;
+      }
+
+      .grid-3 {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .footer-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      footer {
+        padding-bottom: 2.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 1. Encabezado -->
+  <header>
+    <div class="contenedor header-contenido">
+      <a href="#" class="logo">ELECTRICISTA <span>MGM</span></a>
+      <a href="#contacto" class="btn btn-primario">Contacto</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- 2. Hero -->
+    <section class="hero">
+      <div class="contenedor hero-grid">
+        <div>
+          <span class="badge">San Miguel, Corrientes • Servicio a domicilio</span>
+          <h1>Electricidad segura y confiable con <span>Electricista MGM</span></h1>
+          <p>
+            Servicio eléctrico domiciliario, media y baja tensión, instalaciones trifásicas y solución de fallas a domicilio para el público en general. Trabajo garantizado y de calidad.
+          </p>
+          <div class="hero-acciones">
+            <a
+              class="btn btn-whatsapp"
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://wa.me/5493794557920?text=Hola%20Electricista%20MGM,%20quiero%20consultar%20por%20un%20servicio%20a%20domicilio."
+            >
+              Consultar por WhatsApp
+            </a>
+            <a href="#servicios" class="btn btn-primario">Ver servicios</a>
+          </div>
+        </div>
+
+        <div class="tarjeta-destacada" id="servicios">
+          <h2>Servicios principales</h2>
+          <ul class="lista-servicios">
+            <li>Instalaciones y reparaciones domiciliarias</li>
+            <li>Media y baja tensión</li>
+            <li>Instalaciones y ajustes trifásicos</li>
+            <li>Tableros, protecciones y detección de fallas</li>
+            <li>Atención a domicilio en San Miguel</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Beneficios -->
+    <section class="seccion-alterna">
+      <div class="contenedor">
+        <div class="titulo-seccion">
+          <h2>¿Por qué elegir Electricista MGM?</h2>
+          <p>Compromiso, prolijidad y respaldo en cada trabajo</p>
+        </div>
+
+        <div class="grid-3">
+          <article class="card">
+            <div class="icono-box">✓</div>
+            <h3>Trabajo garantizado</h3>
+            <p>Ejecutamos cada tarea con criterio técnico y materiales adecuados para brindarte seguridad y durabilidad.</p>
+          </article>
+
+          <article class="card">
+            <div class="icono-box">★</div>
+            <h3>Calidad profesional</h3>
+            <p>Experiencia en instalaciones domiciliarias, trifásicas y trabajos en media y baja tensión bien terminados.</p>
+          </article>
+
+          <article class="card">
+            <div class="icono-box">⌂</div>
+            <h3>Atención a domicilio</h3>
+            <p>Vamos directo a tu hogar o proyecto en San Miguel, Corrientes, con trato claro y soluciones concretas.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Cómo funciona en 3 pasos -->
+    <section>
+      <div class="contenedor">
+        <div class="titulo-seccion">
+          <h2>¿Cómo trabajamos?</h2>
+          <p>Simple, rápido y sin vueltas en 3 pasos</p>
+        </div>
+
+        <div class="grid-3">
+          <article class="card">
+            <span class="paso-numero">Paso 1</span>
+            <h3>Escribinos por WhatsApp</h3>
+            <p>Contanos qué necesitás o qué falla tenés, si es domiciliario, trifásico o de baja/media tensión.</p>
+          </article>
+
+          <article class="card">
+            <span class="paso-numero">Paso 2</span>
+            <h3>Coordinamos la visita</h3>
+            <p>Acordamos día y horario para revisar el lugar y darte una respuesta clara y directa.</p>
+          </article>
+
+          <article class="card">
+            <span class="paso-numero">Paso 3</span>
+            <h3>Trabajo realizado y garantizado</h3>
+            <p>Resolvemos el trabajo con prolijidad, seguridad y garantía de calidad.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. Cierre con llamado a la acción -->
+    <section id="contacto" class="seccion-alterna">
+      <div class="contenedor">
+        <div class="cierre-box">
+          <h2>¿Necesitás un electricista de confianza?</h2>
+          <p>
+            Consultá ahora por WhatsApp y coordiná tu servicio a domicilio en San Miguel, Corrientes.
+          </p>
+          <a
+            class="btn btn-whatsapp"
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://wa.me/5493794557920?text=Hola%20Electricista%20MGM,%20necesito%20pedir%20presupuesto%20por%20un%20trabajo%20el%C3%A9ctrico."
+          >
+            Escribinos por WhatsApp
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- 6. Pie de página -->
+  <footer>
+    <div class="contenedor">
+      <div class="footer-grid">
+        <div>
+          <h3>Electricista MGM</h3>
+          <p>Servicio eléctrico domiciliario, media y baja tensión y trifásica. Trabajo garantizado y de calidad.</p>
+        </div>
+
+        <div>
+          <h3>Domicilio y zona</h3>
+          <p>Barrio 30 Viviendas, Casa 06 (cortada)<br>Alberdi y Wilda de Eced<br>San Miguel, Corrientes</p>
+        </div>
+
+        <div>
+          <h3>Contacto directo</h3>
+          <p>WhatsApp: +54 9 379 455-7920<br>Atención al público en general</p>
+        </div>
+      </div>
+
+      <div class="footer-base">
+        <p>© 2026 Electricista MGM — San Miguel, Corrientes. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Botón flotante de WhatsApp -->
+  <a
+    class="whatsapp-flotante"
+    target="_blank"
+    rel="noopener noreferrer"
+    href="https://wa.me/5493794557920?text=Hola%20Electricista%20MGM,%20quiero%20hacer%20una%20consulta."
+  >
+    WhatsApp
+  </a>
+
+</body>
+</html>
